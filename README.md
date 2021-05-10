@@ -1,70 +1,29 @@
 # Investigating the Viability of Generating Trading Strategies with Multi-Objective Evolutionary Algorithms
-# ECM3401 - Source Code
+## ECM3401 - Source Code
+## General Overview
 
-## Building the docker images
+This program investigates using NSGA-II with strongly typed genetic programming to find successful trading strategies.
 
-Navigate into the EasyRide-1 directory then enter the following commands.
+## Running the program
+### Clone the repository and start the virtual environment
+
+The virtual environment is named evolution_env and contains the relevant libraries and dependancies that are needed to run the program successfully. The following code can demonstrate how to start the environment.
 
 ```shell
-$ cd driver-microservice
-$ docker build --tag driver_env .
+$ cd evolution_env
+$ source bin/activate
 $ cd ..
-$ cd cost-microservice
-$ docker build --tag cost_env .
-$ cd ..
-$ cd mapping-microservice
-$ docker build --tag mapping_env .
-$ cd ..
-
 ```
 
-## Creating the docker network
+### Configure globals.py
+
+Depending on the tests being carried out, the parameters for the evolutionary process need to be changed. This can be achieved by opening and editing gloabls.py. This file holds all the global variables in one place to allow for consistency across the files.
+
+## Run evolution.py
+
+The final step is to run the program. Use the command below to run the program using parallel processing.
 
 ```shell
-$ docker network create --subnet 192.168.1.0/24 easy_ride_network 
+$ python3 -m scoop evolution.py
 ```
 
-## Running the the isolated containers
-
-```shell
-$ docker run --name container1 --net easy_ride_network \
-        --ip 192.168.1.8 --detach \
-        --publish 3000:8888 \
-        --security-opt apparmor=unconfined driver_env
-
-$ docker run --name container2 --net easy_ride_network \
-        --ip 192.168.1.7 --detach \
-        --publish 3001:8888 \
-        --security-opt apparmor=unconfined cost_env
-
-$ docker run --name container3 --net easy_ride_network \
-        --ip 192.168.1.6 --detach \
-        --publish 3002:8888 \
-        --security-opt apparmor=unconfined mapping_env
-```
-
-## Dont't forget to remove the images, containers and network after use
-
-```shell
-$ docker kill container1
-$ docker kill container2
-$ docker kill container3
-$ docker rm container1
-$ docker rm container2
-$ docker rm container3
-$ docker network rm easy_ride_network
-$ docker rmi driver_env
-$ docker rmi cost_env
-$ docker rmi mapping_env
-```
-
-# Generating a JWT token for testing a custom driver
-
-I have included another file, generateToken.go, which can generate JWT tokens to allow for testing if you would like to test this feature. Run the generateToken.go file by entering:
-
-```shell
-$ go run generateToken.go
-```
-
-This will print to the terminal the JWT token that a driver can then send in the header
-of a POST which allows the driver to be authenticated for creating, updating and deleting.
