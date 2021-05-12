@@ -14,7 +14,9 @@ https://youtu.be/b7TvS3BT2ME
 # ECM3401 - Source Code
 ## General Overview
 
-This program investigates using NSGA-II with strongly typed genetic programming to find successful trading strategies.
+This program investigates using NSGA-II with strongly typed genetic programming to find successful trading strategies. The PDF containing the final report and the results of this research can be found here:
+
+https://github.com/BenTrotter/ECM3401_BenTrotter/blob/main/Final_Report.pdf
 
 ## Running the program
 ### Clone the repository and start the virtual environment
