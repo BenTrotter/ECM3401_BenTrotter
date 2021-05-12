@@ -1,4 +1,10 @@
 # Investigating the Viability of Generating Trading Strategies with Multi-Objective Evolutionary Algorithms
+## Demonstration video link
+
+The video zipped to the submission has been compressed so the quality of this video may be reduced making it harder to read the slides. Therefore it is recommened to view the video through the youtube link below as it will be in a higher quality:
+
+https://youtu.be/b7TvS3BT2ME
+
 # ECM3401 - Source Code
 ## General Overview
 
@@ -25,5 +31,4 @@ The final step is to run the program. Use the command below to run the program u
 
 ```shell
 $ python3 -m scoop evolution.py
-```
 
