@@ -1,4 +1,10 @@
 # Investigating the Viability of Generating Trading Strategies with Multi-Objective Evolutionary Algorithms
+## Github Repository link
+
+Contains external libraries in a virtual environment. This virtual environent was too large to submit. Git hub link:
+
+https://github.com/BenTrotter/ECM3401_BenTrotter.git
+
 ## Demonstration video link
 
 The video zipped to the submission has been compressed so the quality of this video may be reduced making it harder to read the slides. Therefore it is recommened to view the video through the youtube link below as it will be in a higher quality:
